@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: inset;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    cursor:text;
+    border-style: solid;
+    border-width: 50px;
+    transform: translate(-50%,-50%);
+    border-radius: 20px 20px 20px 20px;
+    background: rgb(95, 86, 86);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0,4);
+    margin-top : 25px;
+    border: rgb(110, 74, 74);
+}
+#result{
+    background-color:rgb(224, 198, 198);
+    color:rgb(110, 40, 40);
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+    border-width: 5px;
+    height: 10px;
+    width:410px;
+    border-style:inset;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.buttons{
+    display:flex;
+    border-style: inset;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.2px;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    gap: 0.2px;
+}
+.row button{
+    width: 100px;
+    height: 50px;
+    cursor:pointer;
+    border-radius: 2px 2px 10px 2px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.2s all linear; 
+} 
+.row button:hover{
+    background-color: #6b6060;
+}
+.row button:active{
+    background-color: #a6dba6;
+}
+#dot{
+    font-weight: 600;
+}
+#clear,#delete,#addition,#square,#log,#mdivision,#division,#multiplication,#subtraction,#dot,#equal,#sqrt {
+    background-color:rgb(165, 165, 177);
+}
+#on,#off{
+    background-color: rgb(143, 63, 77);
+}
