@@ -7,12 +7,11 @@ function dis(val){
     if(status==false){
         return;
     }
-    result.innerText=document.getElementById("result").value;
-    document.getElementById("result").value+=val;
-    if(result.innerText=="0"){
+    let currentDisplay=document.getElementById("result").value;
+    if(currentDisplay=="0"){
         document.getElementById("result").value="";
-        document.getElementById("result").value+=val;
     }
+    document.getElementById("result").value+=val;
 }
 function clr(){
     if(status==false){
@@ -20,8 +19,8 @@ function clr(){
     }
     let a=document.getElementById("result").value;
     document.getElementById("result").value=a.toString().slice(0,-1);
-    result.innerText=document.getElementById("result").value;
-    if(result.innerText==""){
+    let currentDisplay=document.getElementById("result").value;
+    if(currentDisplay==""){
         document.getElementById("result").value="0";
     }
 }
@@ -38,8 +37,22 @@ function solve()
         return;
     }
     let x=document.getElementById("result").value;
-    let y=eval(x);
+    let y;
+    try{
+        y=eval(x);
+        
+    }
+    catch(err){
+        alert("Enter Valid Operations!!!");
+    }
     document.getElementById("result").value=y;
+    let b=document.getElementById("result").value;
+    if(b.includes('.')){
+        b=(b)*1000;
+        b=Math.round(b);
+        b=b*1.0/1000;
+    }
+    document.getElementById("result").value=b;
 }
 function log()
 {
@@ -49,6 +62,13 @@ function log()
     let x=document.getElementById("result").value;
     let y=Math.log(x);
     document.getElementById("result").value=y;
+    let b=document.getElementById("result").value;
+    if(b.includes('.')){
+        b=(b)*1000;
+        b=Math.round(b);
+        b=b*1.0/1000;
+    }
+    document.getElementById("result").value=b;
 }
 
 function sqrt()
@@ -59,6 +79,13 @@ function sqrt()
     let x=document.getElementById("result").value;
     let y=Math.sqrt(x);
     document.getElementById("result").value=y;
+    let b=document.getElementById("result").value;
+    if(b.includes('.')){
+        b=(b)*1000;
+        b=Math.round(b);
+        b=b*1.0/1000;
+    }
+    document.getElementById("result").value=b;
 }
 function sqr()
 {
@@ -68,6 +95,13 @@ function sqr()
     let x=document.getElementById("result").value;
     let y=eval(x*x);
     document.getElementById("result").value=y;
+    let b=document.getElementById("result").value;
+    if(b.includes('.')){
+        b=(b)*1000;
+        b=Math.round(b);
+        b=b*1.0/1000;
+    }
+    document.getElementById("result").value=b;
 }
 function off()
 {
